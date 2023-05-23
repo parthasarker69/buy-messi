@@ -1,3 +1,10 @@
+### Project name
+Buy Messi
+
+### Live link
+https://clinquant-taiyaki-ef47af.netlify.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

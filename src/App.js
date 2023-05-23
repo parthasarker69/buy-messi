@@ -2,6 +2,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main';
 import Home from './components/Home/Home';
+import Reviews from './components/Reviews/Reviews';
+import Dashboard from './components/Dashboard/Dashboard';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   const router = createBrowserRouter([
@@ -11,27 +14,27 @@ function App() {
       children: [
         {
           path: '/',
+
+          loader: async () => fetch('https://jsonplaceholder.typicode.com/comments'),
           element: <Home></Home>
         },
         {
           path: 'home',
+          loader: async () => fetch('https://jsonplaceholder.typicode.com/comments'),
           element: <Home></Home>
         },
         {
           path: 'reviews',
-          element: <Home></Home>
+          loader: async () => fetch('https://jsonplaceholder.typicode.com/comments'),
+          element: <Reviews></Reviews>
         },
         {
           path: 'dashboard',
-          element: <Home></Home>
-        },
-        {
+          loader: async () => fetch('data.json'),
+          element: <Dashboard></Dashboard>
+        }, {
           path: 'blogs',
-          element: <Home></Home>
-        },
-        {
-          path: 'about',
-          element: <Home></Home>
+          element: <Blogs></Blogs>
         }
       ]
     },
